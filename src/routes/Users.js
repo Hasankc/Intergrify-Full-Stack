@@ -1,6 +1,13 @@
+import UserCard from "../components/UserCard";
+
 const Users = () => {
+    const users = ["Hasan", "Tatiana", "Alisher"];
+
     return (
-        <div>Here will be many user cards</div>
+        <div>
+            <h1>Here will be many user cards</h1>
+            { users.map(userName => <UserCard key={userName} name={userName} />) }
+        </div>
     )
 } 
 
