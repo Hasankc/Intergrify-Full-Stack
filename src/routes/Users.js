@@ -13,8 +13,8 @@ const Users = () => {
         <Row xs={1} md={2} lg={3} className="g-4 mt-4 mb-5">
             {users.map(user => {
                 return (
-                    <Col key={user.name}>
-                        <UserCard name={user.name} />
+                    <Col key={user.id}>
+                        <UserCard name={user.name} userName={user.username} id={user.id} web={user.website} />
                     </Col>
                 )
             })}

@@ -1,7 +1,7 @@
 import { Card, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-const UserCard = ({ name }) => {
+const UserCard = ({ name, userName, web, id }) => {
     const navigate = useNavigate();
 
     return (
@@ -9,10 +9,11 @@ const UserCard = ({ name }) => {
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
                 <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
+                   @{userName}
+                   <br />
+                   <a href={"http://" + web} target="_blank" rel="noreferrer">{web}</a>
                 </Card.Text>
-                <Button onClick={() => navigate(name)} variant="primary">More details</Button>
+                <Button onClick={() => navigate("" + id)} variant="primary">More details</Button>
             </Card.Body>
         </Card>
     )
