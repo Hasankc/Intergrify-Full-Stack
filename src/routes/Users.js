@@ -1,13 +1,19 @@
+import { Row, Col } from "react-bootstrap";
 import UserCard from "../components/UserCard";
 
 const Users = () => {
     const users = ["Hasan", "Tatiana", "Alisher"];
 
     return (
-        <div>
-            <h1>Here will be many user cards</h1>
-            { users.map(userName => <UserCard key={userName} name={userName} />) }
-        </div>
+        <Row>
+            {users.map(user => {
+                return (
+                    <Col key={user}>
+                        <UserCard name={user} />
+                    </Col>
+                )
+            })}
+        </Row>
     )
 } 
 
