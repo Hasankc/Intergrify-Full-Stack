@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Users from './routes/Users';
+import UserDetails from './routes/UserDetails';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Routes>
+      <Route index element={<Users />} />
+      <Route path=":userId" element={<UserDetails />} />
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
